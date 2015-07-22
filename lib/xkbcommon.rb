@@ -1,14 +1,17 @@
 require "xkbcommon/version"
 require 'ffi'
-require 'ffi/libc'
 
 module Xkbcommon
+  extend FFI::Library
 
+  ffi_lib 'xkbcommon'
 end
 
-require 'xkbcommon/xkbcommon-compat.rb'
-require 'xkbcommon/xkbcommon-compose.rb'
-require 'xkbcommon/xkbcommon-keysyms.rb'
-require 'xkbcommon/xkbcommon-names.rb'
-require 'xkbcommon/xkbcommon-x11.rb'
-require 'xkbcommon/xkbcommon.rb'
+module Xkbcommon
+  class_eval File.read(File.join(File.dirname(__FILE__), 'xkbcommon/xkbcommon-compose.rb'))
+  class_eval File.read(File.join(File.dirname(__FILE__), 'xkbcommon/xkbcommon-keysyms.rb'))
+  class_eval File.read(File.join(File.dirname(__FILE__), 'xkbcommon/xkbcommon-names.rb'))
+  class_eval File.read(File.join(File.dirname(__FILE__), 'xkbcommon/xkbcommon.rb'))
+end
+
+
