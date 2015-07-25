@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["mail@christopheraue.net"]
 
   spec.summary       = %q{1:1 ruby bindings for libxkbcommon}
-  spec.homepage      = "https//github.com/christopheraue/ruby-xkbcommon"
+  spec.homepage      = "https://github.com/christopheraue/ruby-xkbcommon"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
