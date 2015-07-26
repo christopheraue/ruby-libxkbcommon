@@ -49,12 +49,12 @@
     end
 
   end
-  attach_function :xkb_keysym_get_name, [ :uint, :string, :uint ], :int
+  attach_function :xkb_keysym_get_name, [ :uint, :pointer, :uint ], :int
   XKB_KEYSYM_CASE_INSENSITIVE = (1 << 0)
   XKB_KEYSYM_NO_FLAGS = 0
 
   attach_function :xkb_keysym_from_name, [ :string, :int ], :uint
-  attach_function :xkb_keysym_to_utf8, [ :uint, :string, :uint ], :int
+  attach_function :xkb_keysym_to_utf8, [ :uint, :pointer, :uint ], :int
   attach_function :xkb_keysym_to_utf32, [ :uint ], :uint
   XKB_CONTEXT_NO_DEFAULT_INCLUDES = (1 << 0)
   XKB_CONTEXT_NO_ENVIRONMENT_NAMES = (1 << 1)

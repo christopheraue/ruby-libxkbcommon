@@ -16,8 +16,17 @@ namespace :ffi do
     # manual adjustments
     `sed -i 's/va_list/:pointer/g' lib/libxkbcommon/xkbcommon.rb`
 
+    # translate char* into :pointer instead of :string
     before = 'attach_function :xkb_state_key_get_utf8, \[ :pointer, :uint, :string, :uint \], :int'
     after  = 'attach_function :xkb_state_key_get_utf8, [ :pointer, :uint, :pointer, :uint ], :int'
+    `sed -i 's/#{before}/#{after}/g' lib/libxkbcommon/xkbcommon.rb`
+
+    before = 'attach_function :xkb_keysym_get_name, \[ :uint, :string, :uint \], :int'
+    after  = 'attach_function :xkb_keysym_get_name, [ :uint, :pointer, :uint ], :int'
+    `sed -i 's/#{before}/#{after}/g' lib/libxkbcommon/xkbcommon.rb`
+
+    before = 'attach_function :xkb_keysym_to_utf8, \[ :uint, :string, :uint \], :int'
+    after  = 'attach_function :xkb_keysym_to_utf8, [ :uint, :pointer, :uint ], :int'
     `sed -i 's/#{before}/#{after}/g' lib/libxkbcommon/xkbcommon.rb`
 
     `sed -i 's/Shift/"Shift"/g' lib/libxkbcommon/xkbcommon-names.rb`
