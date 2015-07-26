@@ -130,7 +130,7 @@
   attach_function :xkb_state_update_key, [ :pointer, :uint, :int ], :int
   attach_function :xkb_state_update_mask, [ :pointer, :uint, :uint, :uint, :uint, :uint, :uint ], :int
   attach_function :xkb_state_key_get_syms, [ :pointer, :uint, :pointer ], :int
-  attach_function :xkb_state_key_get_utf8, [ :pointer, :uint, :string, :uint ], :int
+  attach_function :xkb_state_key_get_utf8, [ :pointer, :uint, :pointer, :uint ], :int
   attach_function :xkb_state_key_get_utf32, [ :pointer, :uint ], :uint
   attach_function :xkb_state_key_get_one_sym, [ :pointer, :uint ], :uint
   attach_function :xkb_state_key_get_layout, [ :pointer, :uint ], :uint

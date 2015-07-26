@@ -1,4 +1,4 @@
-# Xkbcommon
+# Libxkbcommon
 
 1:1 ruby bindings for libxkbcommon
 
@@ -7,7 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'xkbcommon'
+gem 'libxkbcommon'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install xkbcommon
+    $ gem install libxkbcommon
 
 ## (Re-)Compiling the binding
 
