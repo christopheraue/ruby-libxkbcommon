@@ -8,7 +8,6 @@ module Libxkbcommon
 end
 
 module Libxkbcommon
-  CON = 'bla'
   class_eval File.read(File.join(File.dirname(__FILE__), 'libxkbcommon/xkbcommon-compose.rb'))
   class_eval File.read(File.join(File.dirname(__FILE__), 'libxkbcommon/xkbcommon-keysyms.rb'))
   class_eval File.read(File.join(File.dirname(__FILE__), 'libxkbcommon/xkbcommon-names.rb'))
