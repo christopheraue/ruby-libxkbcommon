@@ -8,7 +8,7 @@ module Libxkbcommon
 end
 
 module Libxkbcommon
-  XKB_KEYMAP_USE_ORIGINAL_FORMAT = 0
+  XKB_KEYMAP_USE_ORIGINAL_FORMAT = -1
   class_eval File.read(File.join(File.dirname(__FILE__), 'libxkbcommon/xkbcommon-compose.rb'))
   class_eval File.read(File.join(File.dirname(__FILE__), 'libxkbcommon/xkbcommon-keysyms.rb'))
   class_eval File.read(File.join(File.dirname(__FILE__), 'libxkbcommon/xkbcommon-names.rb'))
